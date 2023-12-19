@@ -1,8 +1,9 @@
 $col: column;
 $primary-color:#dc7b46;
-$primary-dark:#90502e;
+$primary-dark:#5f280b;
 $secondary-color: #704b38;
-$chat-bg: #dda485;
+$chat-bg: #b69a8c;
+$reddish: rgb(157, 65, 65);
 
 @mixin centered-flex ($direction:row, $gap:10px){
     display: flex;
@@ -189,7 +190,113 @@ $chat-bg: #dda485;
 
             .chat-nav{
                 background-color: $secondary-color;
-                padding: 1%
+                padding: 2%
+            }
+            
+            .messages{
+                padding: 10px;
+                height: calc(100% - 122px);
+                overflow-y:scroll;
+
+                .message{
+                    
+                    display:flex;
+                    // flex-direction: row-reverse;
+                    gap: 10px;
+
+                    .message-meta{
+                        @include centered-flex(column, 4px);
+                        align-items: flex-start;
+                        img{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 5px;
+                            object-fit: cover;
+                        }
+                        
+                        span{
+                            font-size: 10px;
+                            color: lightgray;
+                        }
+
+                    }
+
+                    .message-content{
+                        @include centered-flex(column);
+                        max-width: 75%;
+
+                        p{
+                            background-color: white;
+                            color: black;
+                            padding: 1% 10px;
+                            border-radius: 0 5px 5px 5px;
+                            box-sizing: border-box;
+                        }
+
+                        img{
+                            width: 45%;
+
+                        }
+                    
+                    }
+                    &.origin{
+                        flex-direction: row-reverse;
+
+                        .message-content{
+                            align-items: flex-end;
+                            p{
+                                background-color: $primary-color;
+                                color: white;
+                                padding: 1% 10px;
+                                border-radius: 5px 0 5px 5px;
+                                box-sizing: border-box;
+                            }
+                        }
+                        
+                        
+                    }
+                }
+                
+            }
+
+            .input{
+                height: 60px;
+                background-color: $reddish;
+                @include centered-flex();
+                justify-content: space-between;
+                padding: 0 2%;
+                
+                input{
+                    height: 50%;
+                    width: 100%;
+                    outline: none;
+                    font-size: large;
+                }
+                
+                .send{
+                    display: flex;
+                    gap: 10px;
+                    font-size: 12px;
+
+                    #file{
+                        display: none;
+                    }
+                    label:hover{
+                        cursor: pointer;
+                    }
+
+                    button{
+                        margin: 2%;
+                        border-radius: 5px;
+                        // padding: 2%;
+                        border: none;
+                    }
+                    button:hover{
+                        cursor: pointer;
+                        background-color: $primary-color;
+                        transition:background-color 0.5s;
+                    }
+                }
             }
         }
     }

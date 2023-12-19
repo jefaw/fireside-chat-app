@@ -1,5 +1,6 @@
 import React from 'react'
 import Messages from './Messages'
+import Input from './Input'
 
 export default function Chatarea() {
     return (
@@ -8,6 +9,7 @@ export default function Chatarea() {
                 <span>Chatting with: User name</span>
             </div>
             <Messages />
+            <Input />
         </div>
     )
 }
