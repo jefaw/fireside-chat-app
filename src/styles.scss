@@ -1,0 +1,75 @@
+$col: column;
+$primary-color:#dc7b46;
+$secondary-color: #704b38;
+
+@mixin centered-flex ($direction:row, $gap:10px){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+
+.form-box{
+    background-color: $primary-color;
+    height: 100vh;
+    @include centered-flex();
+
+    .form-wrapper{
+        background-color: rgb(26, 23, 23);
+        padding: 2% 3%;
+        border-radius: 15px;
+        box-shadow: 5px 5px 5px $secondary-color;
+        @include centered-flex($col, 15px);
+
+        .logo{
+            font-size: 25px;
+            line-height: 1.1;
+            color: $primary-color;
+            font-weight: bold;
+        }
+
+        .wrapper-title{
+            font-size: 1em;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            input{
+                padding: 10px;
+                border-radius: 5px;
+                width: 300px;
+                &::placeholder{
+                    color: #888888;
+                }
+            }
+            
+            #file{
+                display: none;
+            }
+            label{
+                @include centered-flex();
+                justify-content: flex-start;
+                color: #888888;
+                font-size: 12px;
+
+                #upload{
+                    cursor: pointer;
+                    border-radius: 5px;
+                    width:50px;
+                }
+
+            }
+            
+            
+        }
+        p{
+            color: $primary-color;
+        }
+        
+    }
+}

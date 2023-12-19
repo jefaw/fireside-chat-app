@@ -1,4 +1,5 @@
 import React from 'react'
+import Upload from "../assets/upload.jpg";
 
 export default function Register() {
   return (
@@ -11,11 +12,15 @@ export default function Register() {
                   <input type="text" name="" id="" placeholder="username"/>
                   <input type="email" name="" id="" placeholder="email"/>
                   <input type="password" name="" id="" placeholder="password"/>
-                  <input type="file" name="" id="" />
-                      
+                  <input type="file" name="" id="file" />
+                  <label htmlFor="file">
+                    <img src={Upload} alt="" id='upload'/>
+                    <span>Upload a profie picture</span>
+                  </label>
+                  <button className="signup-btn">Sign up</button>
               </form>
-              <button className="signup-btn">Sign up</button>
-              <p>Already registered? Login here</p>
+              
+              <p>Already registered? Login</p>
           </div>
         </div>    
     </>

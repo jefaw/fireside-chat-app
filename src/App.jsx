@@ -1,5 +1,6 @@
 import './App.css'
 import Register from './pages/Register'
+import './styles.scss'
 
 function App() {
 
