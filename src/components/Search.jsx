@@ -77,17 +77,21 @@ export default function Search() {
                     });
                     
                 }
-            } catch (error) {
-                setUser(null);
-                setUsersearch(usersearch);
-            }
+            } catch (error) {}
+                
+            setUser(null);
+            setUsersearch("");
 
     }
 
     return (
         <div className='search'>
             <div className="find">
-                <input type="text" placeholder='Find chat' onKeyDown={handleKey} onChange={e=>setUsersearch(e.target.value)}/>
+                <input type="text" placeholder='Find chat' 
+                onKeyDown={handleKey} 
+                onChange={e=>setUsersearch(e.target.value)}
+                value={ usersearch }
+                />
             </div>
             {error && <span>User not found!</span>}
             {user && (<div className="users" onClick={handleSelect}>
