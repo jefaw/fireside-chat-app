@@ -19,6 +19,9 @@ $reddish: rgb(157, 65, 65);
     background-color: $primary-color;
     height: 100vh;
     @include centered-flex();
+    a:hover{
+        cursor: pointer;
+    }
 
     .form-wrapper{
         background-color: rgb(26, 23, 23);
@@ -69,7 +72,7 @@ $reddish: rgb(157, 65, 65);
 
             }
             span{
-                font-size: 12px;
+                font-size: 13px;
             }
             
             
