@@ -59,6 +59,7 @@ export default function Search() {
                     
                     //create users' convos
                     await updateDoc(doc(db, "convos", currentUser.uid), {
+                        //nested
                         [joinedUid + ".userInfo"]: {
                             uid: user.uid,
                             displayName: user.displayName,
