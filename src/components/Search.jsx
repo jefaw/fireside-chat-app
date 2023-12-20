@@ -18,10 +18,12 @@ export default function Search() {
                 setUser(doc.data())
             });
             console.log(user)
+            if (user === null){
+                setError(true);
+            }
             
         } catch (error) {
-            setError(error);
-            console.log(error)
+            setError(true);
         }
     }
 
