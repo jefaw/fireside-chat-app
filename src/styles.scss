@@ -1,6 +1,7 @@
 $col: column;
 $primary-color:#dc7b46;
 $primary-dark:#5f280b;
+$primary-bg: #876c5f;
 $secondary-color: #704b38;
 $chat-bg: #b69a8c;
 $reddish: rgb(157, 65, 65);
@@ -67,6 +68,9 @@ $reddish: rgb(157, 65, 65);
                 }
 
             }
+            span{
+                font-size: 12px;
+            }
             
             
         }
@@ -93,7 +97,7 @@ $reddish: rgb(157, 65, 65);
 }
 
 .home{
-    background-color: $primary-color;
+    background-color: $primary-bg;
     height: 100vh;
     @include centered-flex();
 
@@ -271,6 +275,7 @@ $reddish: rgb(157, 65, 65);
                     width: 100%;
                     outline: none;
                     font-size: large;
+                    border-radius: 5px;
                 }
                 
                 .send{
