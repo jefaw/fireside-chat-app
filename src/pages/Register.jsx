@@ -19,7 +19,7 @@ export default function Register() {
   async function handleSubmit(e){
     e.preventDefault();
     // console.log(e.target[0].value)
-    const username = e.target[0].value;
+    const displayName = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
     const file = e.target[3].files[0];
@@ -28,7 +28,7 @@ export default function Register() {
       const create = await createUserWithEmailAndPassword(auth, email, password)
       // console.log(user);
 
-      const storageRef = ref(storage, username); //ref to image in the storage will be username
+      const storageRef = ref(storage, displayName); //ref to image in the storage will be username
 
       //Create a unique image name
       // const date = new Date().getTime();
@@ -39,13 +39,13 @@ export default function Register() {
           try {
             //Update / add profile picture
             await updateProfile(create.user, {
-              username,
+              displayName,
               photoURL: downloadURL,
             });
             //create a user on firestore to be findable on chat
             await setDoc(doc(db, "users", create.user.uid), {
               uid: create.user.uid,
-              username,
+              displayName,
               email,
               photoURL: downloadURL,
             });

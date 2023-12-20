@@ -131,10 +131,15 @@ $reddish: rgb(157, 65, 65);
                 }
                 img{
                     background-color: red;
-                    height: 25px;
-                    width: 25px;
+                    height: 35px;
+                    width: 35px;
                     border-radius: 10%;
                     object-fit: cover;
+                }
+                
+                #displayName{
+                    font-weight: lighter;
+                    font-size: 15px;
                 }
 
                 button{
@@ -147,7 +152,7 @@ $reddish: rgb(157, 65, 65);
                 }
             }
             .search{
-                
+                background-color: $reddish;
                 border-bottom: 1px solid grey;
                 .find{
                     padding: 1%;
