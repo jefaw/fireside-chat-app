@@ -34,7 +34,7 @@ export default function Chats() {
 
     return (
         <div className='chats'>
-            {Object.entries(convos)?.map(convo => (
+            {Object.entries(convos)?.sort((a,b)=>b[1].date - a[1].date).map(convo => (
                 //key= uid
                 <div className="users" key={convo[0]} onClick={()=>handleSelect(convo[1].userInfo)}>
                     <img src={convo[1].userInfo.photoURL} alt="Profile Picture" />
@@ -44,7 +44,7 @@ export default function Chats() {
                     </div>
                 </div>
             ))}
-            
+
             {/* dummy user */}
             <div className="users">
                 <img src="https://th.bing.com/th/id/OIG.vKLFI7Sx6L.WA6uUC.Bd?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Profile Picture" />

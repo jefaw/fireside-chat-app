@@ -211,14 +211,15 @@ $reddish: rgb(157, 65, 65);
                 overflow-y:scroll;
 
                 .message{
-                    
                     display:flex;
                     // flex-direction: row-reverse;
                     gap: 10px;
+                    margin-bottom: 10px;
 
                     .message-meta{
                         @include centered-flex(column, 4px);
                         align-items: flex-start;
+                        
                         img{
                             width: 40px;
                             height: 40px;
@@ -227,7 +228,8 @@ $reddish: rgb(157, 65, 65);
                         }
                         
                         span{
-                            font-size: 10px;
+                            max-width: 40px;
+                            font-size: 8px;
                             color: lightgray;
                         }
 
