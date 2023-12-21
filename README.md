@@ -12,7 +12,7 @@ This is a realtime chat application built using React, Firebase and Vite.
 ## Website hosted with Firebase
 
 
-https://bold-cable-407004.web.app
+https://bold-cable-407004.web.app/login
 (until Jan 12 2024)
 
 ## To run the app locally
