@@ -7,6 +7,7 @@ import { db } from '../firebase';
 export default function Messages() {
     const [messages, setMessages] = useState([]);
     const { data } = useContext(ChatContext);
+    // console.log(data)
 
     useEffect(() => {
         const unSub = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
@@ -25,7 +26,6 @@ export default function Messages() {
                 {messages.map((message) => (
                     <Message message={message} key={message.id} />
                 ))}
-                <Message />
             </div>
         </>
     )

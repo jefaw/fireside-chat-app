@@ -40,10 +40,12 @@ export default function Chats() {
                     <img src={convo[1].userInfo.photoURL} alt="Profile Picture" />
                     <div className="users-info">
                         <span>{convo[1].userInfo.displayName}</span>
-                        <p>{convo[1].userInfo.lastMessage?.text}</p>
+                        <p>{convo[1].lastMessage?.text}</p>
                     </div>
                 </div>
             ))}
+            
+            {/* dummy user */}
             <div className="users">
                 <img src="https://th.bing.com/th/id/OIG.vKLFI7Sx6L.WA6uUC.Bd?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Profile Picture" />
                 <div className="users-info">

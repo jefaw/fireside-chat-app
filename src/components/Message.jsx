@@ -14,7 +14,7 @@ export default function Message() {
             </div>
             <div className="message-content">
                 <p>message text here is a message then what here is a longer</p>
-                <img src="https://sass-lang.com/assets/img/logos/logo.svg" alt="" />
+                <img src="https://sass-lang.com/assets/img/logos/logo.svg" alt="Image" />
             </div>
 
         </div>
