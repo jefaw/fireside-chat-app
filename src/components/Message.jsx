@@ -14,8 +14,8 @@ export default function Message({ message }) {
     useEffect(() => {
         divRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [message]);
-    console.log(message)
-    console.log(message.date.toDate())
+    // console.log(message)
+    // console.log(message.date.toDate())
     return (
         <div ref={divRef} className={`message ${message.senderId === currentUser.uid && "origin"}`}>
             <div className="message-meta">
