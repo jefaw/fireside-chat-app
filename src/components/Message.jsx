@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../context/AuthContext'
+import { ChatContext } from '../context/ChatContext';
 
 export default function Message() {
+
+    const { currentUser } = useContext(AuthContext)
+    const { data } = useContext(ChatContext);
     return (
         <div className='message origin'>
             <div className="message-meta">

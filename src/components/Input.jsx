@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { AuthContext } from '../context/AuthContext';
+import { ChatContext } from '../context/ChatContext';
 
 export default function Input() {
+    const { currentUser } = useContext(AuthContext)
+    const { data } = useContext(ChatContext);
+
+    const [text, setText] = useState("");
+    const [image, setImage] = useState(null);
+
     return (
         <>
 

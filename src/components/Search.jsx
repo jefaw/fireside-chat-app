@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { collection, query, where, getDocs, setDoc, doc, updateDoc, serverTimestamp, getDoc } from "firebase/firestore"
 import { db } from "../firebase"
 import { AuthContext } from '../context/AuthContext';
+import { ChatContext } from '../context/ChatContext';
 
 export default function Search() {
     const[usersearch, setUsersearch] = useState("");
@@ -9,6 +10,7 @@ export default function Search() {
     const[error, setError] = useState(false);
     
     const { currentUser } = useContext(AuthContext);
+    const { dispatch } = useContext(ChatContext);
     
     async function handleSearch() {
         //search users with a firebase query
@@ -21,6 +23,7 @@ export default function Search() {
             if (querySnapshot.size === 0) {
                 // no user found
                 setError(true);
+                setUser(null)
             } else {
                 // user found, get the first document's data
                 const userDoc = querySnapshot.docs[0];
