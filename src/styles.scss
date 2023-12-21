@@ -14,6 +14,21 @@ $reddish: rgb(157, 65, 65);
     gap: $gap;
 }
 
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content;
+        }
+    }
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
 
 .form-box{
     background-color: $primary-color;
@@ -111,6 +126,9 @@ $reddish: rgb(157, 65, 65);
         height: 80%;
         display: flex;
         overflow: hidden;
+        @include tablet(){
+            width: 80%;
+        }
 
         .sidebar{
             flex: 1;
@@ -124,7 +142,10 @@ $reddish: rgb(157, 65, 65);
                 padding: 4% 2%;
 
                 .logo{
-                    font-weight: bold;
+                    font-weight: lighter;
+                    @include tablet(){
+                        display: none;
+                    }
                 }
                 .user{
                     @include centered-flex();
@@ -152,7 +173,7 @@ $reddish: rgb(157, 65, 65);
                 }
             }
             .search{
-                background-color: $reddish;
+                background-color: $primary-color;
                 border-bottom: 1px solid grey;
                 .find{
                     padding: 1%;
@@ -161,6 +182,10 @@ $reddish: rgb(157, 65, 65);
                         width: 100%;
                         background-color: transparent;
                         outline: none;
+                    }
+                    span{
+                        font-size: 13px;
+                        color: $reddish
                     }
                     
                 }
@@ -201,13 +226,15 @@ $reddish: rgb(157, 65, 65);
             background-color: $chat-bg;
 
             .chat-nav{
+                font-weight: lighter;
                 background-color: $secondary-color;
-                padding: 2%
+                height: 20px;
+                padding: 10px;
             }
             
             .messages{
                 padding: 10px;
-                height: calc(100% - 122px);
+                height: calc(100% - 120px);
                 overflow-y:scroll;
 
                 .message{
@@ -275,7 +302,7 @@ $reddish: rgb(157, 65, 65);
 
             .input{
                 height: 60px;
-                background-color: $reddish;
+                background-color: $primary-dark;
                 @include centered-flex();
                 justify-content: space-between;
                 padding: 0 2%;
@@ -285,7 +312,8 @@ $reddish: rgb(157, 65, 65);
                     width: 100%;
                     outline: none;
                     font-size: large;
-                    border-radius: 5px;
+                    background-color: transparent;
+                    border: none;
                 }
                 
                 .send{

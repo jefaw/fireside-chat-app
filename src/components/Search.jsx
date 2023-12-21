@@ -96,8 +96,9 @@ export default function Search() {
                 onChange={e=>setUsersearch(e.target.value)}
                 value={ usersearch }
                 />
+                {error && <span>User not found!</span>}
             </div>
-            {error && <span>User not found!</span>}
+            
             {user && (<div className="users" onClick={handleSelect}>
                 <img src={user.photoURL} alt="Profile Picture" />
                 <div className="users-info">
