@@ -36,7 +36,7 @@ export default function Login() {
         <div className="form-box">
           <div className="form-wrapper">
               <span className="logo">Fireside Chat</span>
-              <span className="wrapper-title">Login</span>
+              <span className="wrapper-title"></span>
               <form onSubmit={handleSubmit}>
                   <input type="email" name="" id="email" placeholder="email"/>
                   <input type="password" name="" id="password" placeholder="password"/>

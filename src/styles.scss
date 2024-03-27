@@ -1,9 +1,9 @@
 $col: column;
-$primary-color:#dc7b46;
-$primary-dark:#5f280b;
-$primary-bg: #876c5f;
-$secondary-color: #704b38;
-$chat-bg: #b69a8c;
+$primary-color:#b83a3a;
+$primary-dark:#403d39;
+$primary-bg: #796d6d;
+$secondary-color: #89392f;
+$chat-bg: #9c978f;
 $reddish: rgb(157, 65, 65);
 
 @mixin centered-flex ($direction:row, $gap:10px){
@@ -46,7 +46,7 @@ $reddish: rgb(157, 65, 65);
         @include centered-flex($col, 15px);
 
         .logo{
-            font-size: 25px;
+            font-size: 29px;
             line-height: 1.1;
             color: $primary-color;
             font-weight: bold;
@@ -63,7 +63,7 @@ $reddish: rgb(157, 65, 65);
 
             input{
                 padding: 10px;
-                border-radius: 5px;
+                // border-radius: 2px;
                 width: 300px;
                 &::placeholder{
                     color: #888888;
@@ -102,7 +102,7 @@ $reddish: rgb(157, 65, 65);
             font-size: 1em;
             font-weight: 500;
             font-family: inherit;
-            background-color: #704b38;
+            background-color: $primary-color;
             cursor: pointer;
             transition: border-color 0.25s;
             color: white;
